@@ -1,5 +1,5 @@
 import axios from "axios";
-import { newUser } from "./stateInterface";
+import type { newUser } from "./stateInterface";
 
 const chatApi = axios.create({
     baseURL: "http://localhost:5000",

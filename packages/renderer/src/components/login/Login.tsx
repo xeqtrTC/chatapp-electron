@@ -1,6 +1,7 @@
-import React, { useState, FormEvent } from 'react';
+import type { FormEvent } from 'react';
+import React, { useState } from 'react';
 import BackButton from '../GoBackButton/BackButton';
-import { loginData } from '../Hooks/stateInterface';
+import type { loginData } from '../Hooks/stateInterface';
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../Hooks/firebaseConfig';
 import Error from '../Error/Error';

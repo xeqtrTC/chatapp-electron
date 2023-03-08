@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
+import type { FC } from 'react';
+import React from 'react';
 import { auth } from '../../Hooks/firebaseConfig';
-import UseChatContext from '../../Hooks/useChatContext';
 import ChatofRoom from '../chatOfRoom/ChatofRoom';
 import Sidebar from '../Sidebar/Sidebar';
 

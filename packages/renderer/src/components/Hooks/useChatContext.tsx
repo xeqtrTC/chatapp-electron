@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { UseChatContextType } from "./chatContext";
+import { useContext } from "react";
+import type { UseChatContextType } from "./chatContext";
 import ChatContextProvider  from "./chatContext";
 
 

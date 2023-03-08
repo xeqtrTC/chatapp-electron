@@ -1,4 +1,5 @@
-import React, { createContext, ReactElement, useState } from "react";
+import type { ReactElement } from "react";
+import React, { createContext, useState } from "react";
 
 const ChatContext = () => {
     const [idOfGroup, setIdOfGroup] = useState<string>('')
@@ -10,8 +11,10 @@ export type UseChatContextType = ReturnType<typeof ChatContext>
 
 const initState: UseChatContextType = {
     idOfGroup: '',
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     setIdOfGroup: () => {},
-    imageUploadState: false, 
+    imageUploadState: false,
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     setImageUploadState: () => {}
 }
 

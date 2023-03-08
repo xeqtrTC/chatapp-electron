@@ -1,15 +1,15 @@
-import React, { FC, useEffect, useState } from 'react';
-import { AiOutlineSearch, AiOutlineClose } from 'react-icons/ai'
+import type { FC} from 'react';
+import React, { useEffect, useState } from 'react';
+import { AiOutlineClose } from 'react-icons/ai'
 import { BiLogOut } from 'react-icons/bi'
 import { signOut } from 'firebase/auth'
 import { auth, db } from '../../Hooks/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 import SearchUser from './SearchUser';
 import { FiSettings } from 'react-icons/fi'
-import { collection, where, query, getDocs, onSnapshot, doc, deleteDoc, Firestore } from 'firebase/firestore';
-import { chatArray } from '../../Hooks/stateInterface';
+import { collection, where, query,  onSnapshot, doc, deleteDoc } from 'firebase/firestore';
+import type { chatArray } from '../../Hooks/stateInterface';
 import UseChatContext from '../../Hooks/useChatContext';
-import { v4 } from 'uuid';
 import UploadImage from './UploadImage';
 
 const Sidebar: FC = () => {
@@ -32,23 +32,24 @@ const Sidebar: FC = () => {
 
     const groupCollection = collection(db, 'group');
 
-    const getGroups = async () => {
-        console.log(auth?.currentUser?.uid)
-        const q = query(groupCollection, where('members', 'array-contains', auth?.currentUser?.uid))
-        let messages: chatArray[] = []
-        const unsubcribe =  onSnapshot(q, (querySnapChat) => {
-            querySnapChat.forEach((doc) => {
-                messages.push({ ...doc.data(), id: doc.id});
-            })
-        });
-        setChats(messages);
-        return () => unsubcribe()
-    }
+    // const getGroups = async () => {
+    //     console.log(auth?.currentUser?.uid)
+    //     const q = query(groupCollection, where('members', 'array-contains', auth?.currentUser?.uid))
+    //     let messages: chatArray[] = []
+    //     const unsubcribe =  onSnapshot(q, (querySnapChat) => {
+    //         querySnapChat.forEach((doc) => {
+    //             messages.push({ ...doc.data(), id: doc.id});
+    //         })
+    //     });
+    //     setChats(messages);
+    //     return () => unsubcribe()
+    // }
 
     useEffect(() => {
        const timeout = setTimeout(() => {
         const q = query(groupCollection, where('members', 'array-contains', auth?.currentUser?.uid))
         const unsubcribe = onSnapshot(q, (querySnapshot) => {
+            // eslint-disable-next-line prefer-const
             let messages: chatArray[] = []
             querySnapshot.forEach((doc) => {
                 messages.push({...doc.data()})
@@ -63,11 +64,9 @@ const Sidebar: FC = () => {
     const onClickSetIdGroup = (id: string) => {
         setIdOfGroup(id);
     }
-    const groupCollectionasd = collection(db, 'messages');
 
     const deleteChat = async (id: string) => {
         const chatDoc = doc(db, 'group', id)
-        const messageDoc = doc(db, 'messages', id)
         try {
             await deleteDoc(chatDoc);
             // await deleteDoc(messageDoc);            

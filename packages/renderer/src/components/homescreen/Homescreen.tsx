@@ -1,13 +1,9 @@
-import React, { FC, useState } from "react";
-import { Link, useNavigate } from 'react-router-dom'
-import BackButton from "../GoBackButton/BackButton";
+import type { FC } from "react";
+import React from "react";
+import { Link } from 'react-router-dom'
 
 
 const HomeScreen: FC = () => {
-    const navigate = useNavigate()
-    const onClickGoBack = (): void => {
-        navigate(-1);
-    }
     return (
         <div className="flex items-center justify-center h-full">
             <div className="">

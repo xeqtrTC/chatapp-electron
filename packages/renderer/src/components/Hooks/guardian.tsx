@@ -1,5 +1,5 @@
 import { auth } from "./firebaseConfig";
-import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import React from "react";
 
 

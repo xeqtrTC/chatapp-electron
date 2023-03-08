@@ -1,8 +1,7 @@
-import React, { FC, useRef, useEffect } from "react";
-import { auth } from "../../Hooks/firebaseConfig";
-import { messageProps } from "../../Hooks/stateInterface";
+import React, { useRef, useEffect } from "react";
+import type { messageProps } from "../../Hooks/stateInterface";
 
-const Messages = ({ sendBy, messageText, photoOfSender }: messageProps) => {
+const Messages = ({ sendBy, messageText }: messageProps) => {
     const scrollRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         //  scrollRef.current.scrollTop = scrollRef.current.scrollHeight;

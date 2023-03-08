@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate, HashRouter } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import ChatHomepage from './components/Chats/Homepage/ChatHomepage';
 import HomeScreen from './components/homescreen/Homescreen';
 import Login from './components/login/Login';
 import Signup from './components/signup/Signup';
-import { auth } from './components/Hooks/firebaseConfig';
 import { GuardianLaSpage, SecondGuardianLaSpage } from './components/Hooks/guardian';
 const App: React.FC = () => {
   
@@ -14,11 +13,11 @@ const App: React.FC = () => {
             <HashRouter>
                 <Routes>
                     
-                    {/* <Route element={<GuardianLaSpage />}> */}
+                    <Route element={<GuardianLaSpage />}>
                         <Route path='chat'>
                             <Route index element={<ChatHomepage />} />
                         </Route>
-                    {/* </Route> */}
+                    </Route>
 
                     <Route element={<SecondGuardianLaSpage />}>
                         <Route path='/signup' element={<Signup />} />

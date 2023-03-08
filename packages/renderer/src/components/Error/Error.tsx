@@ -1,5 +1,5 @@
 import React from "react"
-import { errorProps } from "../Hooks/stateInterface";
+import type { errorProps } from "../Hooks/stateInterface";
 
 const Error = ({ error }: errorProps) => {
     return (

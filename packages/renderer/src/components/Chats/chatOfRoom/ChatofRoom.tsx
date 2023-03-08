@@ -1,14 +1,16 @@
-import { addDoc, collection, getDocs, onSnapshot, orderBy, query, serverTimestamp, where } from "firebase/firestore";
-import React, { FC, useState, FormEvent, useEffect, useRef } from "react";
+import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp } from "firebase/firestore";
+import type { FC, FormEvent} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { AiOutlineArrowUp } from 'react-icons/ai'
 import { auth, db } from "../../Hooks/firebaseConfig";
-import { messageArray } from "../../Hooks/stateInterface";
+import type { messageArray } from "../../Hooks/stateInterface";
 import UseChatContext from "../../Hooks/useChatContext";
 import Loader from "../../Loader/Loader";
 import Messages from "./Messages";
 
 const ChatofRoom: FC = () => {
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {idOfGroup, setIdOfGroup} = UseChatContext();
     const [messageSent, setMessageSent] = useState<string>('');
     const [messageArray, setMessageArray] = useState<messageArray[]>([])
@@ -19,6 +21,7 @@ const ChatofRoom: FC = () => {
         const q = query(messageCollection, orderBy('sentAt'))
         setLoading(true);
         const unsubscribe = onSnapshot(q, (querySnapchat) => {
+            // eslint-disable-next-line prefer-const
             let messagePush: messageArray[] = []
             querySnapchat.forEach((doc) => {
                 messagePush.push({...doc.data(), id: doc.id})
@@ -42,7 +45,7 @@ const ChatofRoom: FC = () => {
                 })
                 setMessageSent('');
             } catch (error) {
-                
+                console.log(error);
             }
         }
     }
@@ -81,13 +84,13 @@ const ChatofRoom: FC = () => {
                
             {
                 idOfGroup.length === 0 ? (
-                    <p>nema nista pls radi et</p>
+                    <p>nema nista pls radi et EVO DRUGI PUT PLEASE</p>
                 ) : (
                     <>   
                         <div className="py-10 overflow-hidden overflow-y-scroll h-[90%] scrollbar "> 
                                 {
                                     messageArray.map((item, index) => {
-                                        const { sendBy, sentAt, messageText, photoOfSender } = item; 
+                                        const { sendBy,  messageText, photoOfSender } = item; 
                                         return (
                                             <Messages key={index} sendBy={sendBy} messageText={messageText} photoOfSender={photoOfSender}  />
                                         )
