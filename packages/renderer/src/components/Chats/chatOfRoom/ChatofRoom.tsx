@@ -82,7 +82,7 @@ const ChatofRoom: FC = () => {
       <div className="px-3 py-3 w-full ">
         <div className="py-5 h-full ">
           {idOfGroup.length === 0 ? (
-            <p>nema nista pls radi et EVO DRUGI PUT PLEASE</p>
+            <p>nema nista pls radi et EVO treci PUT PLEASE</p>
           ) : (
             <>
               <div className="py-10 overflow-hidden overflow-y-scroll h-[90%] scrollbar ">

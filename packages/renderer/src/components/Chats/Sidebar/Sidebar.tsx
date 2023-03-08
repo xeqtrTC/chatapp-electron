@@ -15,15 +15,16 @@ import UploadImage from './UploadImage';
 const Sidebar: FC = () => {
   const {idOfGroup, setIdOfGroup, imageUploadState, setImageUploadState} = UseChatContext();
 
-  const truncate = (s: string, n: number) => {
-    return s.length > n ? s.substring(0, n - 1) + '...' : s;
-  };
+  // const truncate = (s: string, n: number) => {
+  //   return s.length > n ? s.substring(0, n - 1) + '...' : s;
+  // };
   const navigate = useNavigate();
   const [chats, setChats] = useState<chatArray[]>([]);
 
   const logout = async () => {
     try {
       await signOut(auth);
+      setIdOfGroup('');
       navigate('/');
     } catch (error) {
       console.log(error);
@@ -76,8 +77,6 @@ const Sidebar: FC = () => {
     }
   };
 
-  console.log(idOfGroup);
-
   return (
     <>
       {imageUploadState && <UploadImage />}
@@ -114,9 +113,6 @@ const Sidebar: FC = () => {
                         </span>
                       </div>
                       <div>
-                        <span className="text-sm text-[#5C5E6D] font-semibold">
-                          {truncate('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaacab', 10)}
-                        </span>
                       </div>
                     </div>
                     <div className="opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in ">

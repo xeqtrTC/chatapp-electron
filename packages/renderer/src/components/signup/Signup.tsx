@@ -8,6 +8,7 @@ import {auth, db} from '../Hooks/firebaseConfig';
 import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
 import {setDoc, doc} from 'firebase/firestore';
 import Error from '../Error/Error';
+import UseChatContext from '../Hooks/useChatContext';
 
 const USERNAME_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -22,6 +23,8 @@ const Signup: FC = () => {
   const [passwordValid, setPasswordValid] = useState<boolean>(false);
   const [repeatPasswordValid, setRepeatPasswordValid] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const {idOfGroup, setIdOfGroup} = UseChatContext();
   const navigate = useNavigate();
 
   const [dataFocus, setDataFocus] = useState<signupDataFocus>({
