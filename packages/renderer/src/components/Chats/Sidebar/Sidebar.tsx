@@ -112,8 +112,7 @@ const Sidebar: FC = () => {
                             : item.createdBy}
                         </span>
                       </div>
-                      <div>
-                      </div>
+                      <div></div>
                     </div>
                     <div className="opacity-0 group-hover:opacity-100 transition-all duration-200 ease-in ">
                       <AiOutlineClose
