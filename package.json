@@ -1,7 +1,7 @@
 {
   "name": "the-conjured",
   "description": "The Conjured Application",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "private": true,
   "main": "packages/main/dist/index.cjs",
   "scripts": {
@@ -24,6 +24,11 @@
     "postinstall": "cross-env ELECTRON_RUN_AS_NODE=1 electron scripts/update-electron-vendors.mjs",
     "format": "npx prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,vue,json}\"",
     "dist": "electron-builder"
+  },
+  "repository": "https://github.com/xeqtrTC/chatapp-electron",
+  "publish": {
+    "provider": "github",
+    "releaseType": "release"
   },
   "build": {
     "appId": "the-conjured",
