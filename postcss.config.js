@@ -1,18 +1,14 @@
-const { join } = require('path');
+const {join} = require('path');
 
 module.exports = {
   plugins: {
     tailwindcss: {
-      content: [
-        join(__dirname, './packages/**/*.{ts,tsx,js,jsx,html}')
-      ],
+      content: [join(__dirname, './packages/**/*.{ts,tsx,js,jsx,html}')],
       theme: {
         extend: {},
       },
-      plugins: [
-        require('tailwind-scrollbar'),
-      ],
+      plugins: [require('tailwind-scrollbar')],
     },
     autoprefixer: {},
-  }
-}
+  },
+};

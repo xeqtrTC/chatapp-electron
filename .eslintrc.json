@@ -5,11 +5,7 @@
     "node": true,
     "browser": false
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 12,
@@ -32,6 +28,5 @@
      * This avoids rare errors in optimized code.
      * @see https://twitter.com/alex_kozack/status/1364210394328408066
      */
-   
   }
 }

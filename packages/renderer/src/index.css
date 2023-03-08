@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 @layer components {
-    .button {
-        @apply bg-white px-5 py-2 rounded hover:bg-white/60 transition-all ease-in-out duration-200 font-medium
-    }
-    .pSignup {
-        @apply text-[#1C1F2C] font-medium text-sm
-    }
-    .focusChat {
-        @apply p-5  
-    }
-    .onFocusChat {
-        @apply pl-5 pt-5 pb-5
-    }
+  .button {
+    @apply bg-white px-5 py-2 rounded hover:bg-white/60 transition-all ease-in-out duration-200 font-medium;
+  }
+  .pSignup {
+    @apply text-[#1C1F2C] font-medium text-sm;
+  }
+  .focusChat {
+    @apply p-5;
+  }
+  .onFocusChat {
+    @apply pl-5 pt-5 pb-5;
+  }
 }
