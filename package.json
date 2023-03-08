@@ -17,7 +17,8 @@
     "watch": "node scripts/watch.mjs",
     "lint": "eslint . --ext js,mjs,cjs,ts,mts,cts",
     "postinstall": "cross-env ELECTRON_RUN_AS_NODE=1 electron scripts/update-electron-vendors.mjs",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "format": "npx prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,json}\""
   },
   "repository": "https://github.com/xeqtrTC/chatapp-electron",
   "publish": {
