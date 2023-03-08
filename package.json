@@ -3,6 +3,11 @@
   "description": "The Conjured Application",
   "version": "1.0.7",
   "main": "packages/main/dist/index.cjs",
+  "author": {
+    "email": "bosko.bezarevic000@gmail.com",
+    "name": "xeqtr",
+    "url": "https://boskodev.netlify.app/"
+  },
   "scripts": {
     "build": "npm run build:main && npm run build:preload && npm run build:renderer",
     "build:main": "cd ./packages/main && vite build",
