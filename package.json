@@ -38,7 +38,7 @@
       "uninstallerIcon": "iconDeagle.ico",
       "uninstallDisplayName": "the-conjured-uninstaller",
       "license": "license.md",
-      "allowToChangeInstallationDirectory": false 
+      "allowToChangeInstallationDirectory": false
     }
   },
   "devDependencies": {
