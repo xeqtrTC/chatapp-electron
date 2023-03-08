@@ -1,6 +1,7 @@
-import { updateCurrentUser, updateProfile } from 'firebase/auth';
+import { updateProfile } from 'firebase/auth';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import type { ChangeEvent} from 'react';
+import React, { useState } from 'react';
 import { AiOutlineClose, AiOutlineUpload } from 'react-icons/ai'
 import { v4 } from 'uuid';
 import { auth, storage } from '../../Hooks/firebaseConfig';
@@ -9,6 +10,7 @@ import UseChatContext from '../../Hooks/useChatContext';
 const UploadImage = () => {
 
     const [image, setImage] = useState<File | null>(null);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const {imageUploadState, setImageUploadState} = UseChatContext();
     const uploadImagetest = (e: ChangeEvent<HTMLInputElement> ) => {
         if (e.target.files != null) {

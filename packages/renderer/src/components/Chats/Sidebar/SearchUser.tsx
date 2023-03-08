@@ -1,8 +1,10 @@
-import React, { FC, useEffect, useState, FormEvent } from "react";
-import { addDoc, arrayUnion, collection, doc, getDocs, onSnapshot, query, serverTimestamp, updateDoc, where } from "firebase/firestore";
+/* eslint-disable prefer-const */
+import type { FC, FormEvent } from "react";
+import React, { useEffect, useState } from "react";
+import { addDoc, arrayUnion, collection, doc, getDocs, query, serverTimestamp, updateDoc, where } from "firebase/firestore";
 import { AiOutlineSearch } from "react-icons/ai";
 import { auth, db } from "../../Hooks/firebaseConfig";
-import { onClickSearchProps, searchUserArray, searchUserProps } from "../../Hooks/stateInterface";
+import type { onClickSearchProps, searchUserArray} from "../../Hooks/stateInterface";
 import Error from "../../Error/Error";
 
 

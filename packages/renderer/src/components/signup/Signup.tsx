@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import type { FC, FormEvent} from 'react';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
